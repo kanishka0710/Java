@@ -28,19 +28,20 @@ public class ZeroToHundredEditor extends PropertyEditorSupport {
        if(val < 0 || val > 100) {
 
            throw new IllegalArgumentException(value);
+       } else {
+           propertyValue = val;
        }
 
-       propertyValue = val;
 
     }
 
    
 
-    @SuppressWarnings("deprecation")
-	public String getAsText() {
+    public String getAsText() {
 
        return new Integer(propertyValue).toString();
 
     }
 
 }
+

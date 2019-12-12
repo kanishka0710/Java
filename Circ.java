@@ -113,4 +113,3 @@ public class Circ extends JPanel{
 
 }
 
-

@@ -223,7 +223,6 @@ public class JFrameExt extends JFrame implements ActionListener{
 		
 	}
 	
-	@SuppressWarnings("deprecation")
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		int i;
@@ -232,16 +231,23 @@ public class JFrameExt extends JFrame implements ActionListener{
 		for(i= 0; i < jtfPropValues.length; i++) {
 			if(e.getSource() == jtfPropValues[i]) {
 				propValue = jtfPropValues[i].getText();
+				propName = "jtf";
 				break;
 			} else if (e.getSource() == jcboPropValues[i]) {
 			    propValue = (String)jcboPropValues[i].getSelectedItem();
+			    propName = "jcbo";
 				break;
 			}
 		}
 		try {
 			pe[i].setAsText(propValue);
 		} catch (IllegalArgumentException ex) {
-			jtfPropValues[i].setText(pe[i].getAsText());
+			if (propName.equals("jtf")) {
+			    System.out.println(pe[i].getAsText());
+				jtfPropValues[i].setText(pe[i].getAsText());
+			} else {
+				jcboPropValues[i].setSelectedItem(pe[i].getAsText());
+			}
 		}
 		propName  = pd[i].getName();
 		Class proptype = pd[i].getPropertyType();

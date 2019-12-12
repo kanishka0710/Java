@@ -102,10 +102,10 @@ public class Rect extends JPanel {
 			g.setColor(Color.green);
 		} else if (myForeColor.equalsIgnoreCase("Blue")) {
 			g.setColor(Color.blue);
-		} else if (myBackColor.equalsIgnoreCase("Red")){
-			this.setBackground(Color.red);
-		} else if (myBackColor.equalsIgnoreCase("Yellow")) {
-			this.setBackground(Color.yellow);
+		} else if (myForeColor.equalsIgnoreCase("Red")){
+			g.setColor(Color.red);
+		} else if (myForeColor.equalsIgnoreCase("Yellow")) {
+			g.setColor(Color.yellow);
 		}
 		
 		if(myFill.equalsIgnoreCase("Yes")) {
