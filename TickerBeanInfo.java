@@ -33,7 +33,7 @@ public class TickerBeanInfo extends SimpleBeanInfo{
             
             _myMessage.setPropertyEditorClass(MessageEditor.class);
             
-            PropertyDescriptor _moving = new PropertyDescriptor("moving", beanClass, "isMoving", "setMoving");
+            PropertyDescriptor _moving = new PropertyDescriptor("moving", beanClass, "getMoving", "setMoving");
            
             _moving.setPropertyEditorClass(TrueFalseEditor.class);
 

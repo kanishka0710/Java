@@ -11,7 +11,17 @@ public class Ticker extends JPanel implements Runnable {
 	String myForeColor = "Green";
 	String myBackColor = "Blue";
 	String myMessage = "Boom";
-	boolean moving = false;
+	String moving = "no";
+	
+	public String getMoving() {
+		return moving;
+	}
+
+	public void setMoving(String moving) {
+		this.moving = moving;
+		repaint();
+	}
+
 	private Thread thread;
 	
 	public Ticker() {
@@ -22,7 +32,7 @@ public class Ticker extends JPanel implements Runnable {
 	public void run() {
 		while(true) {
 			
-			if(this.moving) {
+			if(this.moving.equals("yes")) {
 				myXStart = (myXStart + 2)%this.getWidth();
 				repaint();
 			}
@@ -84,15 +94,6 @@ public class Ticker extends JPanel implements Runnable {
 		repaint();
 	}
 
-	public boolean isMoving() {
-		return moving;
-	}
-
-	public void setMoving(boolean moving) {
-		this.moving = moving;
-		repaint();
-		
-	}
 
 	@Override
 	public void paintComponent(Graphics g) {

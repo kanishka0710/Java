@@ -242,11 +242,11 @@ public class JFrameExt extends JFrame implements ActionListener{
 		try {
 			pe[i].setAsText(propValue);
 		} catch (IllegalArgumentException ex) {
+			propValue = pe[i].getAsText();
 			if (propName.equals("jtf")) {
-			    System.out.println(pe[i].getAsText());
-				jtfPropValues[i].setText(pe[i].getAsText());
+				jtfPropValues[i].setText(propValue);
 			} else {
-				jcboPropValues[i].setSelectedItem(pe[i].getAsText());
+				jcboPropValues[i].setSelectedItem(propValue);
 			}
 		}
 		propName  = pd[i].getName();

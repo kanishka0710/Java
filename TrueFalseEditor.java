@@ -8,7 +8,7 @@ public class TrueFalseEditor extends PropertyEditorSupport {
 	private String[] tags = { "yes", "no"};
 
 	public TrueFalseEditor() {
-	    trueFalseString="yes";
+	    trueFalseString="no";
 	}
 
 	public String[] getTags() {
